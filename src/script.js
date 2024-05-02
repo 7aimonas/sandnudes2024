@@ -71,7 +71,7 @@ class App {
     scene = new THREE.Scene()
     scene.fog = new THREE.FogExp2('rgb(116, 120, 4)', 0.0004)
     camera = new THREE.PerspectiveCamera(40, cw / ch, 0.1, 10000)
-    camera.position.set(0, 300, world.depth / 2)
+    camera.position.set(300, 200, world.depth / 2)
     camera.lookAt(400, 0, 0)
 
     this._createLights()
