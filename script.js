@@ -39,7 +39,7 @@ class App {
       wave.unshift(n)
     }
     wave.splice(wave.length - dataArray.length, dataArray.length)
-    y += 0.07
+    y += 0.03
   }
 
   _updateWave() {
@@ -57,9 +57,9 @@ class App {
   _resize() {
     cw = document.body.clientWidth
     ch = document.body.clientHeight
-    camera.aspect = cw / ch
+    camera.aspect = cw / ch/6
     camera.updateProjectionMatrix()
-    renderer.setSize(cw, ch)
+    renderer.setSize(cw, 1.8*ch)
   }
 
   _initScene() {
@@ -69,9 +69,9 @@ class App {
     })
     renderer.autoClear = false
     scene = new THREE.Scene()
-    scene.fog = new THREE.FogExp2('rgb(116, 120, 4)', 0.0004)
+    scene.fog = new THREE.FogExp2('rgb(255, 173, 0)', 0.0004)
     camera = new THREE.PerspectiveCamera(40, cw / ch, 0.1, 10000)
-    camera.position.set(0, 300, world.depth / 2)
+    camera.position.set(300, 200, world.depth / 2)
     camera.lookAt(400, 0, 0)
 
     this._createLights()
